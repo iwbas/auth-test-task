@@ -1,3 +1,15 @@
 .Main {
   padding: 16px;
 }
+
+thead th.asc::after {
+  content: '👇';
+  display: inline-block;
+  margin-left: 1em;
+}
+
+thead th.desc::after {
+  content: '☝️';
+  display: inline-block;
+  margin-left: 1em;
+}
