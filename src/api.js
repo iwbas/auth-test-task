@@ -2,7 +2,7 @@ import axios from 'axios';
 import getToken from './utils/getToken';
 
 const API = axios.create({
-  baseURL: `http://emphasoft-test-assignment.herokuapp.com`,
+  baseURL: `https://emphasoft-test-assignment.herokuapp.com`,
 });
 
 const requestHandler = (request) => {
