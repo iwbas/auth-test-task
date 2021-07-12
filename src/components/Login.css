@@ -13,3 +13,7 @@
 @media (max-width: 600px) {
   .Login__Form {width: 90%;}
 }
+
+.Login__Alert {
+  margin-top: 16px;
+}

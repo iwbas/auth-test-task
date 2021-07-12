@@ -1,15 +1,18 @@
 import './App.css';
-import { useState } from "react";
-import Navigation from './components/Navigation';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Alert from 'react-bootstrap/Alert';
+
+import Navigation from './components/Navigation';
 import Login from './components/Login';
+import Home from "./components/Home";
+import About from "./components/About";
+import UsersList from './components/UsersList';
+import useToken from './hooks/useToken';
 
 function App() {
-  const [token, setToken] = useState();
+  const { token, setToken } = useToken();
 
   if (!token) {
-    return <Login setToken={setToken}/>
+    return <Login setToken={setToken} />;
   }
 
   return (
@@ -21,14 +24,10 @@ function App() {
       <main className="Main">
         <Switch>
           <Route path="/about">
-            <Alert dismissible variant="danger">
-              <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-              <p>Change this and that and try again.</p>
-            </Alert>
             <About />
           </Route>
           <Route path="/users">
-            <Users />
+            <UsersList />
           </Route>
           <Route path="/">
             <Home />
@@ -37,18 +36,6 @@ function App() {
       </main>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
 
 export default App;
